@@ -1,0 +1,30 @@
+img{
+    width: 80%;
+    margin-top: 8%;
+    margin-block-end: 20%;
+}
+.name{
+    margin-top: 8%;
+}
+.lead{
+    padding: 5px;
+    margin-bottom: 10px;
+    position: relative;
+
+}
+.btn-primary{
+    margin-bottom: auto;
+    background-color: black;
+}
+footer{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+}
+.navbar{
+    background-color: rgb(5, 14, 99);
+}
+.btn-outline{
+    background-color: rgb(5, 186, 128);
+}

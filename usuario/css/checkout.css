@@ -1,0 +1,12 @@
+footer{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: 0;   
+}
+.navbar{
+    background-color: rgb(5, 14, 99);
+}
+.btn-primary{
+    background-color: black;
+}

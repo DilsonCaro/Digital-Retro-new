@@ -1,0 +1,73 @@
+{
+    "id": "96E85616JV486835J",
+    "intent": "CAPTURE",
+    "status": "COMPLETED",
+    "purchase_units": [
+        {
+            "reference_id": "default",
+            "amount": {
+                "currency_code": "USD",
+                "value": "61.00"
+            },
+            "payee": {
+                "email_address": "sb-2sbeh26205347@business.example.com",
+                "merchant_id": "7SU8THHUR5S3G"
+            },
+            "soft_descriptor": "PAYPAL *TEST STORE",
+            "shipping": {
+                "name": {
+                    "full_name": "John Doe"
+                },
+                "address": {
+                    "address_line_1": "Free Trade Zone",
+                    "admin_area_2": "Santiago",
+                    "admin_area_1": "Santiago",
+                    "postal_code": "8150215",
+                    "country_code": "CL"
+                }
+            },
+            "payments": {
+                "captures": [
+                    {
+                        "id": "1L534783RE6393641",
+                        "status": "COMPLETED",
+                        "amount": {
+                            "currency_code": "USD",
+                            "value": "61.00"
+                        },
+                        "final_capture": true,
+                        "seller_protection": {
+                            "status": "ELIGIBLE",
+                            "dispute_categories": [
+                                "ITEM_NOT_RECEIVED",
+                                "UNAUTHORIZED_TRANSACTION"
+                            ]
+                        },
+                        "create_time": "2023-06-13T00:17:12Z",
+                        "update_time": "2023-06-13T00:17:12Z"
+                    }
+                ]
+            }
+        }
+    ],
+    "payer": {
+        "name": {
+            "given_name": "John",
+            "surname": "Doe"
+        },
+        "email_address": "sb-cvi5i26211486@personal.example.com",
+        "payer_id": "PZJVW7MQWPZMW",
+        "address": {
+            "country_code": "CL"
+        }
+    },
+    "create_time": "2023-06-13T00:14:42Z",
+    "update_time": "2023-06-13T00:17:12Z",
+    "links": [
+        {
+            "href": "https://api.sandbox.paypal.com/v2/checkout/orders/96E85616JV486835J",
+            "rel": "self",
+            "method": "GET"
+        }
+    ]
+}
