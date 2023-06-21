@@ -6,18 +6,21 @@ require 'clases/clienteFunciones.php';
 $db = new Database();
 $con = $db->conectar();
 
+$proceso = isset($_GET['pago']) ? 'pago' : 'login';
+
 $errors = [];
 
 if (!empty($_POST)) {
 
     $usuario = trim($_POST['usuario']);
     $password = trim($_POST['password']);
+    $proceso = $_POST['proceso'] ?? 'login';
 
     if (esNulo([$usuario, $password])) {
         $errors[] = "Debe llenar todos los campos";
     }
     if (count($errors) == 0) {
-        $errors[] = login($usuario, $password, $con);
+        $errors[] = login($usuario, $password, $con, $proceso);
     }
 
 
@@ -44,6 +47,7 @@ if (!empty($_POST)) {
                 <form action="login.php" method="POST" autocomplete="off">
                     <h2>Login Digital Retro</h2>
                     <?php mostrarMensajes($errors); ?>
+                <input type="hidden" name="proceso" value="<?php echo $proceso;?>">
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
                         <input type="usuario" name="usuario" id="usuario" required>

@@ -41,7 +41,8 @@ if ($productos != null) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Retro</title>
     <script src="https://kit.fontawesome.com/827cf0b5dd.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/pago.css">
     <script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>&currency=<?php echo CURRENCY; ?>">
         // Replace YOUR_CLIENT_ID with your sandbox client ID
@@ -50,46 +51,7 @@ if ($productos != null) {
 </head>
 
 <body>
-    <header>
-        <div class="navbar navbar-expand-lg navbar-dark ">
-            <div class="container">
-                <a href="index.php" class="navbar-brand">
-                    <strong>Digital Retro</strong>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarHeader">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a href="index.php" class="nav-link active">Catalogo</a>
-                        </li>
-                        <div class="container-fluid col-lg-12">
-                            <form class="d-flex" role="search" method="POST">
-                                <input class="form-control col-lg-12 me-2" name="campo" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-success" name="enviar" type="submit"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                    </svg></button>
-                            </form>
-                        </div>
-                    </ul>
-                    <div>
-                        <a href="checkout.php" class="btn btn-primary">Carrito <span id="num_cart" class="badge bg-secondary">
-                                <?php echo $num_cart; ?>
-                            </span>
-                        </a>
-                        <a href="LoginC.php" class="btn btn-primary" name="login"> <i class="bi bi-person"></i> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
-                            </svg>Login</a>
-                        <a href="register.php" class="btn btn-primary" name="registrarse"> <i class="bi bi-person-add"></i> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
-                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
-                                <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" />
-                            </svg>Registrate</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php include_once 'menu.php';?>
     <main>
         <div class="container">
 
@@ -143,7 +105,7 @@ if ($productos != null) {
 
                                         array_push($productos_mp, $item);
                                         unset($item);
-                                ?>
+                                        ?>
                                         <tr>
                                             <td>
                                                 <?php echo $nombre ?>
@@ -157,12 +119,12 @@ if ($productos != null) {
                                     <tr>
                                         <td colspan="2">
                                             <p class="h3 text-end" id="total">
-                                                <?php echo MONEDA . number_format($total, 0, ',', '.'); ?>
-                                            </p>
-                                        </td>
-                                    </tr>
+                                            <?php echo MONEDA . number_format($total, 0, ',', '.'); ?>
+                                        </p>
+                                    </td>
+                                </tr>
                             </tbody>
-                        <?php } ?>
+                            <?php } ?>
                         </table>
                     </div>
                 </div>
@@ -181,7 +143,9 @@ if ($productos != null) {
     $preference->save();
 
     ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 
     <script>
         paypal.Buttons({
@@ -190,7 +154,7 @@ if ($productos != null) {
                 shape: 'pill',
                 label: 'pay'
             },
-            createOrder: function(data, actions) {
+            createOrder: function (data, actions) {
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
@@ -200,10 +164,10 @@ if ($productos != null) {
                 });
             },
 
-            onApprove: function(data, actions) {
+            onApprove: function (data, actions) {
                 let URL = 'clases/captura.php';
 
-                return actions.order.capture().then(function(detalles) {
+                return actions.order.capture().then(function (detalles) {
                     console.log(detalles);
                     let url = 'clases/captura.php';
                     return fetch(url, {
@@ -214,12 +178,12 @@ if ($productos != null) {
                         body: JSON.stringify({
                             detalles: detalles
                         })
-                    }).then(function(response) {
+                    }).then(function (response) {
                         window.location.href = "completado.php?key=" + detalles['id']; //$datos['detalles']['id']
                     });
                 });
             },
-            onCancel: function(data) {
+            onCancel: function (data) {
                 alert("pago cancelado");
                 console.log(data);
             }
@@ -249,22 +213,28 @@ if ($productos != null) {
             <!-- Section: Social media -->
             <section class="mb-4">
                 <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-facebook-f"></i></a>
 
                 <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-twitter"></i></a>
 
                 <!-- Google -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-google"></i></a>
 
                 <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-instagram"></i></a>
 
                 <!-- Linkedin -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
 
                 <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-github"></i></a>
             </section>
             <!-- Section: Social media -->
         </div>
