@@ -48,6 +48,7 @@
                                     <?php echo $_SESSION['user_name']; ?>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="btn_session">
+                                    <li><a class="dropdown-item" href="compras.php">Mis compras</a></li>
                                     <li><a class="dropdown-item" href="logout.php">Cerrar Sesión</a></li>
                                 </ul>
                             </div>

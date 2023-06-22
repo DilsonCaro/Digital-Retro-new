@@ -5,8 +5,10 @@ $db = new Database();
 $con = $db->conectar();
 
 $id_transaccion = isset($_GET['key']) ? $_GET['key'] : '0';
+// $id_transaccion1 = isset($_GET['payment_id']) ? $_GET['payment_id'] : '';
 
 $error = '';
+$total = 0;
 
 if ($id_transaccion == '') {
   $error = 'Error al procesar la petición';
@@ -23,9 +25,26 @@ if ($id_transaccion == '') {
     $fecha = $row['fecha'];
 
     $sqlDet = $con->prepare("SELECT nombre, precio, cantidad FROM detalle_compra WHERE id_compra = ?");
-    $sqlDet->execute([$idCompra]); // Corregido: Se debe usar $sqlDet en lugar de $sql
+    $sqlDet->execute([$idCompra]); 
+
   } else {
-    $error = 'Error al comprobar la compra';
+    $sql = $con->prepare("SELECT count(id) FROM compra WHERE id_transaccion=? AND status=?");
+    $sql->execute([$id_transaccion, 'approved']);
+    if ($sql->fetchColumn() > 0) {
+      $sql = $con->prepare("SELECT id, fecha, email, total FROM compra WHERE id_transaccion=? AND status=? LIMIT 1");
+      $sql->execute([$id_transaccion, 'approved']);
+      $row = $sql->fetch(PDO::FETCH_ASSOC);
+  
+      $idCompra = $row['id'];
+      $total = $row['total'];
+      $fecha = $row['fecha'];
+  
+      $sqlDet = $con->prepare("SELECT nombre, precio, cantidad FROM detalle_compra WHERE id_compra = ?");
+      $sqlDet->execute([$idCompra]); 
+    
+    } else {
+      $error = 'Error al comprobar la compra';
+    }
   }
 }
 ?>
