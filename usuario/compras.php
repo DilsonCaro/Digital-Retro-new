@@ -1,13 +1,15 @@
 <?php
 require 'servicios/config.php';
 require 'servicios/conexion.php';
+require 'clases/clienteFunciones.php';
 
 
 $db = new Database();
 $con = $db->conectar();
 
-// print_r($_SESSION);
 
+$token = generarToken();
+$_SESSION['token'] = $token;
 $id_cliente = $_SESSION['user_cliente'];
 
 $sql = $con->prepare("SELECT id_transaccion, fecha, status, total, medio_pago FROM compra WHERE id_cliente=? ORDER BY DATE(fecha) DESC");
@@ -43,9 +45,9 @@ $sql->execute([$id_cliente]);
                     <?php echo $row['fecha'];?>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">ID Transacción: <?php echo $row['id_transaccion'];?></h5>
+                    <h5 class="card-title">Orden: <?php echo $row['id_transaccion'];?></h5>
                     <p class="card-text">Total: <?php echo $row['total'];?></p>
-                    <a href="compra_detalle.php" class="btn btn-primary">Ver Compra</a>
+                    <a href="detalle_compra.php?order=<?php echo $row['id_transaccion'];?>&token=<?php echo $token;?>" class="btn btn-primary">Ver Compra</a>
                 </div>
             </div>
             <?php }?>
