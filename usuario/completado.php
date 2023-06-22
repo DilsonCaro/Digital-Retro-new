@@ -8,7 +8,7 @@ $id_transaccion = isset($_GET['key']) ? $_GET['key'] : '0';
 // $id_transaccion1 = isset($_GET['payment_id']) ? $_GET['payment_id'] : '';
 
 $error = '';
-$total = 0;
+
 
 if ($id_transaccion == '') {
   $error = 'Error al procesar la petición';
