@@ -106,44 +106,44 @@ if (!empty($_POST)) {
                     <h2 class="titulo">Registro Digital Retro</h2>
                     <div class="inputbox">
                         <ion-icon name="person-circle-outline"></ion-icon>
-                        <input type="text" name="nombres" id="nombres">
+                        <input type="text" name="nombres" id="nombres" required>
                         <label for="nombres">Nombres</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="person-circle-outline"></ion-icon>
-                        <input type="text" name="apellidos" id="apellidos">
+                        <input type="text" name="apellidos" id="apellidos" required>
                         <label for="apellidos">Apellidos</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" required>
                         <span id="validaEmail" class="texto-span"></span>
                         <label for="email">Email</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
-                        <input type="text" name="usuario" id="usuario">
+                        <input type="text" name="usuario" id="usuario" required>
                         <span id="validaUsuario" class="texto-span"></span>
                         <label for="usuario">Nombre usuario</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
-                        <input type="text" name="dni" id="dni">
+                        <input type="text" name="dni" id="dni" required>
                         <label for="dni">DNI</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="password" id="password">
+                        <input type="password" name="password" id="password" required>
                         <label for="password">Contraseña</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="repassword" id="repassword">
+                        <input type="password" name="repassword" id="repassword" required>
                         <label for="repassword">Repetir contraseña</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="call-outline"></ion-icon>
-                        <input type="number" name="telefono" id="telefono">
+                        <input type="number" name="telefono" id="telefono" required>
                         <label for="tel">telefono</label>
                     </div>
                     <div class="forget">

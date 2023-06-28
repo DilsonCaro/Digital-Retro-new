@@ -163,6 +163,12 @@ $modulo = $_REQUEST['modulo'] ?? '';
                     <p>Productos</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="panel.php?modulo=ventas" class="nav-link <?php echo ($modulo == "ventas") ? "active " : " "; ?>">
+                    <i class="fa fa-table nav-icon" aria-hiddent="true"></i>
+                    <p>ventas</p>
+                  </a>
+                </li>
               </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -221,6 +227,9 @@ $modulo = $_REQUEST['modulo'] ?? '';
     }
     if ($modulo == "editarProductos") {
       include_once "editarProductos.php";
+    }
+    if ($modulo == "ventas") {
+      include_once "ventas.php";
     }
     ?>
   </div>

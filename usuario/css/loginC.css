@@ -127,3 +127,6 @@ button{
 .register p a:hover{
     text-decoration: underline;
 }
+.alert{
+    color: #fff;
+}

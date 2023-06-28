@@ -28,7 +28,7 @@ $sql->execute([$id_cliente]);
     <script src="https://kit.fontawesome.com/827cf0b5dd.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/compras.css">
 </head>
 
 <body>
@@ -46,7 +46,9 @@ $sql->execute([$id_cliente]);
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Orden: <?php echo $row['id_transaccion'];?></h5>
-                    <p class="card-text">Total: <?php echo $row['total'];?></p>
+                    <br>
+                    <p class="card-text">Total: <?php echo MONEDA2. ' ', number_format($row['total'], 2, ',', '.');?></p>
+                    <p class="card-text">Total: <?php echo MONEDA. ' ', number_format($row['total']*800, 0, ',', '.');?></p>
                     <a href="detalle_compra.php?order=<?php echo $row['id_transaccion'];?>&token=<?php echo $token;?>" class="btn btn-primary">Ver Compra</a>
                 </div>
             </div>

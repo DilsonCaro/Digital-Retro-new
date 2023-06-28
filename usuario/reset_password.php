@@ -61,6 +61,15 @@ if (!empty($_POST)) {
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        a:hover {
+            color: red;
+        }
+    </style>
     <title>Recuperar Contraseña</title>
 </head>
 
@@ -71,7 +80,6 @@ if (!empty($_POST)) {
                 <form action="reset_password.php" method="POST" autocomplete="off">
                     <input type="hidden" name="user_id" id="user_id" value="<?= $user_id;?>" />
                     <input type="hidden" name="token" id="token" value="<?= $token;?>" />
-                    <?php mostrarMensajes($errors); ?>
                     <h2>Cambiar Contraseña</h2>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
@@ -80,9 +88,11 @@ if (!empty($_POST)) {
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="repassword" id="repassword">
+                        <input type="password" name="repassword" id="repassword" required>
                         <label for="repassword">Confirmar contraseña</label>
                     </div>
+                    <?php mostrarMensajes($errors); ?>
+                    <br>
                     <div class="button">
                         <button type="submit" name="recuperar">continuar</button>
                         <div class="login">

@@ -46,6 +46,7 @@ if (!empty($_POST)) {
             <div class="form-value">
                 <form action="login.php" method="POST" autocomplete="off">
                     <h2>Login Digital Retro</h2>
+                    <br>
                     <?php mostrarMensajes($errors); ?>
                 <input type="hidden" name="proceso" value="<?php echo $proceso;?>">
                     <div class="inputbox">
