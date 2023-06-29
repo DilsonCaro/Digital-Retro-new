@@ -15,7 +15,7 @@
                     </li>
                     <div class="container-fluid col-lg-12">
                         <form class="d-flex" role="search" method="POST">
-                            <input class="form-control col-lg-12 me-2" name="campo" type="search" placeholder="Search"
+                            <input class="form-control col-lg-12 me-2" name="campo" type="search" placeholder="Buscar"
                                 aria-label="Search">
                             <button class="btn btn-success" name="enviar" type="submit"> <svg
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

@@ -166,7 +166,14 @@ $modulo = $_REQUEST['modulo'] ?? '';
                 <li class="nav-item">
                   <a href="panel.php?modulo=ventas" class="nav-link <?php echo ($modulo == "ventas") ? "active " : " "; ?>">
                     <i class="fa fa-table nav-icon" aria-hiddent="true"></i>
-                    <p>ventas</p>
+                    <p>Ventas</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="panel.php?modulo=transacciones" class="nav-link <?php echo ($modulo == "transacciones") ? "active " : " "; ?>">
+                    <!-- <i class="fa fa-table nav-icon" aria-hiddent="true"></i> -->
+                    <i class="fa fa-money-check nav-icon" aria-hiddent="true"></i>
+                    <p>Transacciones</p>
                   </a>
                 </li>
               </ul>
@@ -230,6 +237,9 @@ $modulo = $_REQUEST['modulo'] ?? '';
     }
     if ($modulo == "ventas") {
       include_once "ventas.php";
+    }
+    if ($modulo == "transacciones") {
+      include_once "transacciones.php";
     }
     ?>
   </div>
