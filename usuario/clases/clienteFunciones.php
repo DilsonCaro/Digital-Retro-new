@@ -190,6 +190,21 @@ function actualizaPassword($user_id, $password, $con){
     return false;
 }
 
+// function obtenerNombreProducto($id, $con) {
+//     // Aquí debes agregar la lógica para obtener el nombre del producto según su ID
+//     // Puedes realizar una consulta a la base de datos u obtener la información de otra manera
+
+//     // Ejemplo de consulta a la base de datos para obtener el nombre del producto
+//     $sql = $con->prepare("SELECT nombre_videojuego FROM productos WHERE id = ?");
+//     $sql->execute([$id]);
+//     $row = $sql->fetch(PDO::FETCH_ASSOC);
+//     if ($row) {
+//         return $row['nombre_videojuego'];
+//     } else {
+//         return 'Producto no encontrado'; // Mensaje de error o valor predeterminado en caso de no encontrar el producto
+//     }
+// }
+
 
 
 ?>

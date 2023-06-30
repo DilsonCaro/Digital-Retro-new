@@ -49,7 +49,7 @@ $dolares = 800;
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-4">
-                    <div class="card mb-3">
+                    <div class="card mb-3 border-primary">
                         <div class="card-header">
                             <strong>Detalle de la compra</strong>
                         </div>

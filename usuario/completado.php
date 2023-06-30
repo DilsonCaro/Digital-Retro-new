@@ -10,6 +10,7 @@ $id_transaccion = isset($_GET['key']) ? $_GET['key'] : '0';
 $error = '';
 
 
+
 if ($id_transaccion == '') {
   $error = 'Error al procesar la petición';
 } else {
@@ -69,9 +70,6 @@ if ($id_transaccion == '') {
   <?php include_once 'menu.php'; ?>
   <main>
     <div class="container">
-      <?php
-      $dolares = 800;
-      $CLP = $total * $dolares; ?>
       <?php if (strlen($error) > 0) { ?>
         <div class="row">
           <div class="col">
@@ -88,9 +86,9 @@ if ($id_transaccion == '') {
             <b>Fecha de la compra:</b>
             <?php echo $fecha; ?><br>
             <b>Precio total en USD:</b>
-            <?php echo MONEDA2 . number_format($total, 2, '.', ','); ?><br>
+            <?php echo MONEDA2 . number_format($total, 2, ',', '.'); ?><br>
             <b>Precio total en CLP:</b>
-            <?php echo MONEDA . number_format($CLP, 0, ',', '.'); ?><br>
+            <?php echo MONEDA . number_format($total*800, 0, ',', '.'); ?><br>
           </div>
         </div>
         <div class="row">
