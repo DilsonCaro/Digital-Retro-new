@@ -47,7 +47,7 @@ if (isset($_POST['enviar'])) {
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           <?php foreach ($resultado as $row) { ?>
-            <div class="col">
+            <div class="col col-sm-6 col-md-4">
               <div class="card shadow-sm">
                 <?php
                 $id = $row['id'];
